@@ -85,11 +85,11 @@ WSGI_APPLICATION = 'stdproctor.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME':  'proctordb',
+        'NAME':  'stproctor',
         'USER': 'postgres',
         'PASSWORD':'harshv18',
         'HOST':'localhost',
-        'PORT':'5432'
+        'PORT':'5432',
     }
 }
 

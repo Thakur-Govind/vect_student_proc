@@ -4,18 +4,31 @@ from django.contrib.auth.models import User
 
 class Student(models.Model):
     name=models.CharField(max_length=255)
-    uid=models.IntegerField()
+    uid=models.IntegerField(primary_key=True)
+    extra_curr=models.CharField(max_length=255, default='none')
+    co_curr=models.CharField(max_length=255, default='none')
+    sub_name1 = models.CharField(max_length=255, default='')
+    total1=models.IntegerField(default=0)
+    internal1=models.IntegerField(default=0)
+    theory1=models.IntegerField(default=0)
+    sub_name2 = models.CharField(max_length=255, default='')
+    total2=models.IntegerField(default=0)
+    internal2=models.IntegerField(default=0)
+    theory2=models.IntegerField(default=0)
+    sub_name3 = models.CharField(max_length=255, default='')
+    total3=models.IntegerField(default=0)
+    internal3=models.IntegerField(default=0)
+    theory3=models.IntegerField(default=0)
+    sub_name4 = models.CharField(max_length=255, default='')
+    total4=models.IntegerField(default=0)
+    internal4=models.IntegerField(default=0)
+    theory4=models.IntegerField(default=0)
+    sub_name5 = models.CharField(max_length=255, default='')
+    total5=models.IntegerField(default=0)
+    internal5=models.IntegerField(default=0)
+    theory5=models.IntegerField(default=0)
+    sub_name6 = models.CharField(max_length=255, default='')
+    total6=models.IntegerField(default=0)
+    internal6=models.IntegerField(default=0)
+    theory6=models.IntegerField(default=0)
     user=models.ForeignKey(User, on_delete=models.CASCADE)
-
-
-class Marks(models.Model):
-    sub_name = models.CharField(max_length=255)
-    total=models.IntegerField()
-    internal=models.IntegerField()
-    theory=models.IntegerField()
-    student = models.ForeignKey(Student, on_delete=models.CASCADE)
-
-
-class Extras(models.Model):
-    extra_curr=models.CharField(max_length=255)
-    co_curr=models.CharField(max_length=255)
