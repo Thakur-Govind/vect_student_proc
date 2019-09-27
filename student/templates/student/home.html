@@ -1,0 +1,20 @@
+{% extends 'student/base.html' %}
+
+{% block content %}
+
+
+
+
+{% if user.is_authenticated %}
+<div class="container">
+<h2>BOOM U HAVE LOGGED IN<h2>
+</div>
+{% else  %}
+<div class="container">
+<h2>PLEASE LOG IN<h2>
+</div>
+
+{% endif %}
+
+
+{% endblock %}
