@@ -19,15 +19,23 @@ from django.contrib.auth import views as auth_views
 from django.conf.urls.static import static
 from django.conf import settings
 from student import views
+from django.conf.urls import include,url
+import student.views
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home, name='home'),
-    #Authentication ke views
-    path('signup', views.SignUp.as_view(), name='signup'),
+
+    path('barchart/', include('student.urls')),
+    url(r'mplimage.png',student.views.plotbar),
+    #Authentication ke view
+    path('accounts/',include('accounts.urls')),
     path('login', auth_views.LoginView.as_view(), name='login'),
     path('logout', auth_views.LogoutView.as_view(), name='logout'),
+
+
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
